@@ -40,7 +40,7 @@ def scrape_mars():
     print(f"\n-----Article successfully extracted-----\n")
 
     scrape_results['Article_Header'] = first_article_header
-    scrape_results['Article_Teaser'] = first_article_header
+    scrape_results['Article_Teaser'] = first_article_teaser
 
     ##########################################################################
     #                         Scrape Featured Image
@@ -80,7 +80,7 @@ def scrape_mars():
     mars_facts_df.set_index('Mars - Earth Comparison', inplace=True)      # Replace numbered index
 
     # Export the table to html file
-    mars_facts_df.to_html('mars_facts_table.html', justify='center')
+    mars_facts_df.to_html('mars_facts_table.html', classes="table", justify='center')
 
     print(f"\n-----Mars Fact Table successfully extracted & exported to file-----\n")
     
