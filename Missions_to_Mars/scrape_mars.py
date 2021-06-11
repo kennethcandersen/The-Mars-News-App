@@ -80,11 +80,11 @@ def scrape_mars():
     mars_facts_df.set_index('Mars - Earth Comparison', inplace=True)      # Replace numbered index
 
     # Export the table to html file
-    mars_facts_df.to_html('mars_facts_table.html', classes="table", justify='center')
+    html_str = mars_facts_df.to_html()
 
     print(f"\n-----Mars Fact Table successfully extracted & exported to file-----\n")
     
-    scrape_results['Mars_Fact_Table'] = 'mars_facts_table.html'
+    scrape_results['Mars_Fact_Table'] = html_str
 
     ##########################################################################
     #                      Scrape Hemisphere Images
