@@ -8,68 +8,116 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="local_stylesheet.css">
+
     <title>Latitude vs Climate Conditions Data Analysis</title>
+ 
+
+
   </head>
 
   <body class="bg-secondary">
+    <main>
+    <div class="position-relative p-3 p-md-5 m-md-3 text-white text-center bg-light" 
+        style="background-image: url(' {{ scrape.Featured_Image }} '); background-size: cover">
 
-
-    <div class="container">
-        <div class="row justify-content-evenly">
-            <div class="col-md-11 bg-white m-2">
-                <h1 class="text-center py-2">Mission to Mars</h1>
-                <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">
-                    SCRAPE NEW DATA!</a></p>
-            </div>
+        <div class="col-md-8 p-lg-5 mx-auto my-5">
+          <h1 class="display-4 fw-normal">MISSION TO MARS</h1>
+            <br><br>
+          <a class="btn btn-outline-light" href="/scrape">Scrape again!</a>
         </div>
-        
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+      </div>
+
+
         <!-- ROW: NEWS AND FACT SHEET -->
-        <div class="row justify-content-evenly">
-            <div class="col-md-5 bg-white m-2">
-                <img src="{{ scrape.Featured_Image }}"  class="w-100 p-3 rounded mx-auto d-block" alt="Mars Featured Image"></a>
-                <h3 class='text-center'>"{{ scrape.Article_Header }}"</h3>
-                <p>"{{ scrape.Article_Teaser }}"</p>
+        <div class="row justify-content-evenly my-2">
+            <div class="col-md-5 bg-white">
+                <h3 class='text-center'>Latest News</h3>
+                <hr>
+                <h4 class=>{{ scrape.Article_Header }}</h4>
+                <p>{{ scrape.Article_Teaser }}</p>
+                <p class='text-center'>
+                    <a href="" class="btn btn-primary">Read more!</a>
+                </p>
             </div>
       
-            <div class="col-md-5 bg-white m-2">
-                {{ scrape.Mars_Fact_Table | safe }}
-
+            <div class="col-md-5 bg-white text-center">
+                <h3 class='text-center'>Facts About Mars</h3>
+                <hr>
+                <span class='text-center m-5'>
+                    {{ scrape.Mars_Fact_Table | safe }}
+                </span>            
             </div>
         </div>
 
         <!-- ROW: HEMISPHERE IMAGES -->
         <div class="row justify-content-evenly">
             
-            <div class="col-md-11 bg-white m-2">
-                <h1 class="text-center py-2">Mars Hemispheres</h1>
+            <div class="col-md-12 text-white">
+                <h2 class="text-center py-2">Mars Hemispheres</h2>
             </div>
         </div>    
-            <div class="row justify-content-evenly">
-                <div class="col-md-2 bg-white m-2">
-                    {{ scrape.Mars_Hemisphere_Images[0]['image_url'] }}
-                <img src="https://marshemispheres.com/images/full.jpg"  class="w-75 p-3 rounded mx-auto d-block" alt="Mars Hemisphere Image"></a>
-                <h3 class="text-center">{{ scrape.Mars_Hemisphere_Images[image_name] }}</h3>
+
+        <div class="row justify-content-evenly my-2">
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem; ">
+                    <img src="{{ scrape.Mars_Hemisphere_Images[0]['image_url'] }}" class="card-img-top" alt="Mars Hemisphere Image">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ scrape.Mars_Hemisphere_Images[0]['image_title'] }}</h5>
+                        <a href="{{ scrape.Mars_Hemisphere_Images[0]['hemi_info_url'] }}" class="btn btn-primary">Check it out!</a>
+                    </div>
+                </div>
             </div>
-      
-            <div class="col-md-2 bg-white m-2">
+
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem; ">
+                    <img src="{{ scrape.Mars_Hemisphere_Images[1]['image_url'] }}" class="card-img-top" alt="Mars Hemisphere Image">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ scrape.Mars_Hemisphere_Images[1]['image_title'] }}</h5>
+                        <a href="{{ scrape.Mars_Hemisphere_Images[1]['hemi_info_url'] }}" class="btn btn-primary">Check it out!</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem; ">
+                    <img src="{{ scrape.Mars_Hemisphere_Images[2]['image_url'] }}" class="card-img-top" alt="Mars Hemisphere Image">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ scrape.Mars_Hemisphere_Images[2]['image_title'] }}</h5>
+                        <a href="{{ scrape.Mars_Hemisphere_Images[2]['hemi_info_url'] }}" class="btn btn-primary">Check it out!</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3">
+                <div class="card" style="width: 15rem; ">
+                    <img src="{{ scrape.Mars_Hemisphere_Images[3]['image_url'] }}" class="card-img-top" alt="Mars Hemisphere Image">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ scrape.Mars_Hemisphere_Images[3]['image_title'] }}</h5>
+                        <a href="{{ scrape.Mars_Hemisphere_Images[3]['hemi_info_url'] }}" class="btn btn-primary">Check it out!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- <div class="col-md-3 bg-white">
                   test
                 <link href="" rel="import" />
             </div>
 
-            <div class="col-md-2 bg-white m-2">
+            <div class="col-md-3 bg-white">
                 test
               <link href="" rel="import" />
             </div>
 
-            <div class="col-md-2 bg-white m-2">
+            <div class="col-md-3 bg-white">
             test
             <link href="" rel="import" />
             </div>
-        </div>
+        </div> -->
 
     </div>
-
+</main>
 </body>
 
 </html>
