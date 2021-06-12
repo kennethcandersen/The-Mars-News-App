@@ -1,4 +1,4 @@
-# Web Scraping Challenge: The Mars Latest News App
+# Web Scraping Challenge: The Mars News App
 
 <a href="https://kennethcandersen.github.io/Web-Design-Challenge/index.html" target="_blank"><img width="900" alt="Home Page Screenshot" src="https://github.com/kennethcandersen/Web-Design-Challenge/blob/main/assets/home_page_screenshot.png"></a>
 
