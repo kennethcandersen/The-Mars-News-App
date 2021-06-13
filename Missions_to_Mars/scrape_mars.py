@@ -88,12 +88,12 @@ def scrape_mars():
 
     # Use Pandas to read the url and extract the table
     mars_facts_df = pd.read_html(mars_facts_table_url)[0]
-    mars_facts_df.columns = ['Mars - Earth Comparison', 'Mars', 'Earth']  # Clean up column names
+    mars_facts_df.columns = ['', 'Mars', 'Earth']  # Clean up column names
     mars_facts_df = mars_facts_df.iloc[1:]                                # Get rid of first row
-    mars_facts_df.set_index('Mars - Earth Comparison', inplace=True)      # Replace numbered index
+    mars_facts_df.set_index('', inplace=True)      # Replace numbered index
 
     # Export the table to html file
-    html_str = mars_facts_df.to_html()
+    html_str = mars_facts_df.to_html(col_space="30%", classes='mars_table', justify='center')
 
     #print(f"\n-----Mars Fact Table successfully extracted & exported to file-----\n")
     
