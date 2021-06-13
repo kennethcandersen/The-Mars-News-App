@@ -18,9 +18,13 @@ This app scrapes the latest data regarding Mars exploration and presents it in o
 Create an app that automatically concentrates and displays the latest data on Mars exploration from four different websites into one convenient user interface. 
 
 
-**TOOLS & LANGUAGES USED**
+**STEPS, TOOLS & LANGUAGES USED**
 
-
+1. Create an unstructured database in Mongo. An unstructured database makes sense since the project requires collecting a heterogenous set of data, including images, text and data formatted in a table. 
+2. Create and test the scraping code in Jupyter Notebook. The code uses Splinter, ChromeDriverManager, BeautifulSoup, and Pandas. The scraped data is exported directly to the Mongo database using Pymongo. 
+3. Convert the scraping code created in Notebook into one Python file as a function that can be called by the app. 
+4. Create the app in a Python file using Flask that calls the scraping function, then launches the HTML page that renders the data (see next item).
+5. Create an HTML file with Bootstrap and CSS that renders the data in a convenient user interface. 
 
 =======
 
